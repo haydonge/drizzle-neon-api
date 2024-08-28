@@ -1,0 +1,29 @@
+{
+  "name": "drizzle-demo",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "bun run ./src/db/migrate.ts",
+    "db:migrates": "node --experimental-specifier-resolution=node -r dotenv/config ./src/db/migrate.ts",
+    "db:seed": "bun run ./src/db/seed.ts",
+    "format": "bunx @biomejs/biome format ./src --write",
+    "lint": "bunx @biomejs/biome lint ./src",
+    "start": "bun run src/index.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "bun-types": "^1.1.26",
+    "drizzle-kit": "^0.24.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.9.4",
+    "drizzle-orm": "^0.33.0",
+    "hono": "^4.5.9",
+    "postgres": "^3.4.4"
+  }
+}
